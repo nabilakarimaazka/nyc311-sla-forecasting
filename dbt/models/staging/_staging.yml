@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name : stg_hpd_requests
+    description: "Data 311 HPD yang sudah dirapikan, satu baris per tiket"
+    columns:
+      - name: unique_key
+        data_tests:
+          - unique
+          - not_null
+      - name : created_date
+        data_tests:
+          - not_null
+      - name: status
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['Closed', 'Open', 'In Progress', 'Unspecified']

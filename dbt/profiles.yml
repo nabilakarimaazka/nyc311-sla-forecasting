@@ -1,0 +1,7 @@
+nyc311:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: ../data/warehouse/nyc311.duckcb
+      threads: 4
